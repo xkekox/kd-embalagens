@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Oficial K&D - Jeferson</title>
+    <meta name="kd-whatsapp-number" content="5592992717496">
+    <title>Catalogo Oficial K&amp;D - Jeferson</title>
+    <meta name="description" content="Catalogo oficial da K&D Embalagens em Manaus com sacolas, pizzas, salgados e caixas especiais para pedidos em escala.">
+    <script src="./catalog-utils.js" defer></script>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -32,6 +35,66 @@
             margin: auto;
         }
 
+        .hero {
+            background: linear-gradient(160deg, rgba(212, 175, 55, 0.18), rgba(0, 0, 0, 0.92));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 18px;
+            padding: 22px 18px;
+            text-align: left;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+            margin-top: 16px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 30px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            margin: 0 0 16px;
+            color: #e7e0c2;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .pill-grid,
+        .nav-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        .pill-grid {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            margin: 18px 0;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .nav-grid {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            margin-top: 12px;
+        }
+
+        .nav-link {
+            display: block;
+            background: #161616;
+            border: 1px solid #303030;
+            border-radius: 10px;
+            padding: 12px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+
         .info-box {
             background: #1a1a1a;
             padding: 15px;
@@ -40,7 +103,7 @@
             text-align: left;
             margin: 20px 0;
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .category {
@@ -115,8 +178,20 @@
             margin-bottom: 8px;
             display: inline-block;
         }
+
+        .section-note,
+        .footer-note {
+            color: #c8c8c8;
+            font-size: 13px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .footer-note {
+            margin: 24px 0 8px;
+            padding-bottom: 20px;
+        }
     </style>
-    <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
@@ -134,39 +209,57 @@
     </script>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1353721879855670&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
 
     <script>
         function zap(prod) {
-            // Track Lead event when clicking to WhatsApp
-            fbq('track', 'Lead', {
-                content_name: prod,
-                content_category: 'Catalog Redirect'
+            const msg = `Ola Jeferson! Vi o catalogo e quero o orcamento para ${prod}, de 100 a 1.000 unidades.`;
+            window.KDCatalog.openWhatsApp(msg, {
+                eventName: 'Lead',
+                eventData: {
+                    content_name: prod,
+                    content_category: 'Catalog Redirect'
+                }
             });
-
-            const msg = `Olá Jeferson! Vi o catálogo e quero o orçamento de Milheiro para ${prod}.`;
-            // Pequeno delay para garantir que o pixel dispare antes do redirect
-            setTimeout(() => {
-                window.location.href = `https://wa.me/5592XXXXXXXXX?text=${encodeURIComponent(msg)}`;
-            }, 100);
         }
     </script>
 </head>
 
 <body>
-    <div class="header">K&D EMBALAGENS</div>
+    <div class="header">K&amp;D EMBALAGENS</div>
     <div class="container">
-        <div class="info-box">
-            💎 <b>CONDIÇÕES ESPECIAIS (JEFERSON):</b><br>
-            ✅ <b>A PARTIR DE 250 UNID:</b> LOGO + FRETE GRÁTIS (Manaus)<br>
-            ❌ <b>ABAIXO DE 250 UNID:</b> TAXA DE TELA R$ 90 + FRETE<br>
-            ⏱️ <b>PRAZO DE PRODUÇÃO:</b> 7 DIAS ÚTEIS
+        <div class="hero">
+            <h1>Embalagem personalizada com fabrica local em Manaus.</h1>
+            <p>A K&amp;D cresce em cima de velocidade, personalizacao acessivel e atendimento direto com quem fecha pedido. O foco aqui nao e vender caixa generica: e colocar a marca do cliente na rua sem depender de balsa ou fabrica de fora.</p>
+            <div class="pill-grid">
+                <div class="pill"><strong>Fabrica propria em Manaus</strong><br>Mais seguranca de estoque e resposta rapida.</div>
+                <div class="pill"><strong>Personalizacao raiz</strong><br>Tela unica de R$ 90 para iniciar a identidade da marca.</div>
+                <div class="pill"><strong>Fechamento B2B direto</strong><br>Jeferson conduz atendimento, orcamento e milheiro.</div>
+            </div>
+            <a class="btn btn-gold" href="#linhas">VER LINHAS E FECHAR ORCAMENTO</a>
+            <div class="nav-grid">
+                <a class="nav-link" href="./sacolas.html">Sacolas</a>
+                <a class="nav-link" href="./salgados.html">Salgados</a>
+                <a class="nav-link" href="./pizzas.html">Pizzas</a>
+                <a class="nav-link" href="./caixas-especiais.html">Caixas especiais</a>
+            </div>
         </div>
 
-        <div class="category">🛍️ LINHA SACOLAS KRAFT (COLORIDAS)</div>
+        <div class="info-box">
+            <strong>CONDICOES ESPECIAIS (JEFERSON):</strong><br>
+            <strong>A PARTIR DE 250 UNID:</strong> logo + frete gratis (Manaus)<br>
+            <strong>ABAIXO DE 250 UNID:</strong> taxa de tela R$ 90 + frete<br>
+            <strong>PRAZO DE PRODUCAO:</strong> 7 dias uteis
+        </div>
+
+        <div class="section-note" id="linhas">
+            O melhor argumento comercial da K&amp;D e simples: estoque local, personalizacao viavel e atendimento sem burocracia. Use as paginas detalhadas para cada linha quando precisar mandar um link mais segmentado no WhatsApp.
+        </div>
+
+        <div class="category">LINHA SACOLAS KRAFT (COLORIDAS)</div>
         <div class="card">
-            <span class="badge">ÚNICO QUE É COLORIDO</span>
+            <span class="badge">UNICO MODELO COLORIDO</span>
             <h3>Sacolas Kraft Personalizadas</h3>
+            <p class="section-note">Linha de maior impacto visual para varejo, delivery premium e marcas que querem sair da embalagem branca comum.</p>
             <table>
                 <tr>
                     <th>Tamanho</th>
@@ -204,12 +297,13 @@
                     <td class="promo">R$ 1,55</td>
                 </tr>
             </table>
-            <button class="btn btn-gold" onclick="zap('Sacolas Kraft')">FECHAR MILHEIRO DE SACOLAS</button>
+            <button class="btn btn-gold" onclick="zap('Sacolas Kraft')">VER PRECO DE 100 A 1.000 UNIDADES</button>
         </div>
 
-        <div class="category">🥐 LINHA SALGADOS</div>
+        <div class="category">LINHA SALGADOS</div>
         <div class="card">
             <h3>Caixas para Salgados</h3>
+            <p class="section-note">Produto forte para docerias, lanchonetes e operacoes que precisam padronizar embalagem e ganhar cara de marca propria.</p>
             <table>
                 <tr>
                     <th>Tamanho</th>
@@ -247,12 +341,13 @@
                     <td class="promo">R$ 1,92</td>
                 </tr>
             </table>
-            <button class="btn btn-gold" onclick="zap('Salgados')">FECHAR MILHEIRO SALGADOS</button>
+            <button class="btn btn-gold" onclick="zap('Salgados')">VER PRECO DE 100 A 1.000 UNIDADES</button>
         </div>
 
-        <div class="category">🍕 LINHA PIZZAS</div>
+        <div class="category">LINHA PIZZAS</div>
         <div class="card">
             <h3>Caixas de Pizza</h3>
+            <p class="section-note">Oferta pensada para pizzarias que querem escala com prazo de producao claro e fornecedor local para evitar ruptura.</p>
             <table>
                 <tr>
                     <th>Tamanho</th>
@@ -290,12 +385,13 @@
                     <td class="promo">R$ 2,20</td>
                 </tr>
             </table>
-            <button class="btn btn-gold" onclick="zap('Pizzas')">FECHAR MILHEIRO PIZZA</button>
+            <button class="btn btn-gold" onclick="zap('Pizzas')">VER PRECO DE 100 A 1.000 UNIDADES</button>
         </div>
 
-        <div class="category">📦 CAIXAS ESPECIAIS</div>
+        <div class="category">CAIXAS ESPECIAIS</div>
         <div class="card">
-            <h3>Tênis, Peixe e Frango</h3>
+            <h3>Tenis, Peixe e Frango</h3>
+            <p class="section-note">Linha para operacoes que precisam fugir do generico e mostrar mais valor no ponto de venda ou na entrega.</p>
             <table>
                 <tr>
                     <th>Produto</th>
@@ -319,14 +415,18 @@
                     <td class="promo">R$ 1,92</td>
                 </tr>
                 <tr>
-                    <td>Caixa Tênis</td>
+                    <td>Caixa Tenis</td>
                     <td>R$ 2,26</td>
                     <td>R$ 2,19</td>
                     <td>R$ 2,12</td>
                     <td class="promo">R$ 2,06</td>
                 </tr>
             </table>
-            <button class="btn btn-gold" onclick="zap('Caixas Especiais')">FECHAR MILHEIRO CALÇADOS</button>
+            <button class="btn btn-gold" onclick="zap('Caixas Especiais')">VER PRECO DE 100 A 1.000 UNIDADES</button>
+        </div>
+
+        <div class="footer-note">
+            K&amp;D Embalagens foi posicionada para crescer com foco em B2B local: Manaus primeiro, interior como expansao, e sempre defendendo o valor da personalizacao contra distribuidoras de embalagem generica.
         </div>
     </div>
 </body>
